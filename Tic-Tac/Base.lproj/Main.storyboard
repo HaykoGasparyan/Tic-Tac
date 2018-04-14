@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courgette-Regular.ttf">
+            <string>Courgette-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="oNd-Im-PQv">
+                                <rect key="frame" x="94" y="177" width="187.5" height="333.5"/>
+                                <subviews>
+                                    <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yo-r5-ZCj">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courgette-Regular" family="Courgette" pointSize="30"/>
+                                        <state key="normal" title="70 adagio">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="speedChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mCb-Pv-PYa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="90" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKD-v2-DMk">
+                                        <rect key="frame" x="0.0" y="94.5" width="187.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courgette-Regular" family="Courgette" pointSize="30"/>
+                                        <state key="normal" title="90 andante">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="speedChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ob8-et-Suw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trp-Ui-1Nw">
+                                        <rect key="frame" x="0.0" y="189" width="187.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courgette-Regular" family="Courgette" pointSize="30"/>
+                                        <state key="normal" title="110 moderato">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="speedChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayC-v4-YGM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpA-nf-CEK">
+                                        <rect key="frame" x="0.0" y="283.5" width="187.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="Courgette-Regular" family="Courgette" pointSize="30"/>
+                                        <state key="normal" title="130 allegro">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="speedChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OpG-s2-rC5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Trp-Ui-1Nw" firstAttribute="width" secondItem="oNd-Im-PQv" secondAttribute="width" id="3fx-bf-Jbe"/>
+                                    <constraint firstItem="NKD-v2-DMk" firstAttribute="width" secondItem="0Yo-r5-ZCj" secondAttribute="width" id="9LD-ib-SIN"/>
+                                    <constraint firstItem="0Yo-r5-ZCj" firstAttribute="width" secondItem="oNd-Im-PQv" secondAttribute="width" id="NM9-7L-k3N"/>
+                                    <constraint firstItem="IpA-nf-CEK" firstAttribute="width" secondItem="oNd-Im-PQv" secondAttribute="width" id="wjK-TH-L6W"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="oNd-Im-PQv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="6UA-y4-hkD"/>
+                            <constraint firstItem="oNd-Im-PQv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="CCS-75-JlR"/>
+                            <constraint firstItem="oNd-Im-PQv" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Pet-Zb-Mwm"/>
+                            <constraint firstItem="oNd-Im-PQv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eN5-qj-dBi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sTu-oH-wtS" appends="YES" id="VId-we-LfM"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="oNd-Im-PQv" id="ZDl-Tv-36y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sTu-oH-wtS">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="5Db-Y5-TV5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
