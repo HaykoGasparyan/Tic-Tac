@@ -46,6 +46,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var thirdHelperFlag = true
     var secondHelperFlag = true
     var helperFlag = true
+    var isRunning = false
     var rectangle: UIView!
     let trapezium = CAShapeLayer()
     var pauseResumeButton: UIButton!
@@ -58,6 +59,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        player1.prepareToPlay()
+//        player2.prepareToPlay()
         stackView.alpha = 0
         drawObjects()
         do {
@@ -65,6 +68,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             let audioPlayer2 = Bundle.main.path(forResource: "MetronomeUp", ofType: "wav")
             try player1 = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPlayer1!) as URL)
             try player2 = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPlayer2!) as URL)
+            player1.prepareToPlay()
+            player2.prepareToPlay()
         } catch {
             
         }
@@ -98,6 +103,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
      func pressedPlay() {
         if self.thirdHelperFlag {
             UIView.animate(withDuration: 60/BPM, animations: {
+                self.isRunning = true
                 if self.secondHelperFlag == true {
                     self.rectangle.rotate(angle: 90)
                 } else {
@@ -112,6 +118,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     self.count += 1
                 }
                 self.secondHelperFlag = !self.secondHelperFlag
+                if self.helperFlag {
+                    self.isRunning = false
+                }
                 self.pressedPlay()
             }
         }
@@ -122,7 +131,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             thirdHelperFlag = true
             pauseResumeButton.setImage(UIImage(named: "pause"), for: .normal)
             helperFlag = false
-            pressedPlay()
+            if !isRunning {
+                pressedPlay()
+            }
         } else {
             pauseResumeButton.setImage(UIImage(named: "resume"), for: .normal)
             helperFlag = true
@@ -158,7 +169,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let rectFrame = CGRect(x: width * 1/16, y: height * 3/8 - 5, width: width * 7/16, height: 5)
         rectangle = UIView(frame: rectFrame)
         rectangle.backgroundColor = UIColor.black
-        self.rectangle.setAnchorPoint(anchorPoint: CGPoint(x: 1, y: 1))
+        self.rectangle.setAnchorPoint(anchorPoint: CGPoint(x: 1, y: 0.5))
         rectangle.rotate(angle: 45.0)
         self.view.addSubview(rectangle)
         
