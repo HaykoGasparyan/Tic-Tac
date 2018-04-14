@@ -18,8 +18,8 @@ extension UIView {
     }
     
     //Sets anchor point for rotation to any point
-    //Got from google
     //anchorPoint - coordinate of point, which wanted to be set as anchor point (0-1).
+    //Got from google
     func setAnchorPoint(anchorPoint: CGPoint) {
         var newPoint = CGPoint(x: self.bounds.size.width * anchorPoint.x, y: self.bounds.size.height * anchorPoint.y)
         var oldPoint = CGPoint(x: self.bounds.size.width * self.layer.anchorPoint.x, y: self.bounds.size.height * self.layer.anchorPoint.y)
@@ -82,6 +82,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    //Chooses speed of beats. (Beats per minute)
     @IBAction func chooseSpeed(_ sender: UIButton) {
         let tag = sender.tag
         BPM = Double(sender.tag)
@@ -102,7 +103,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     //Plays animation
-    //This function is also called in completion of animation(recursia) to animate to the oppossite side
+    //This function is also called in completion of animation(recurssion) to animate to the oppossite side
     func playAnimation() {
         if !self.isPuased {
             UIView.animate(withDuration: 60/BPM, animations: {
@@ -129,7 +130,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    //This method is called when pausePlayButtonPressed.
+    //This method is called when pausePlayButton Pressed.
     @objc func pausePlayButtonPressed() {
         if isPuased {
             pauseResumeButton.setImage(UIImage(named: "pause"), for: .normal)
@@ -143,7 +144,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    //adds blure effect and stackView comes visible
+    //adds blure effect and stackView becomes visible
     @objc func speedButtonPressed() {
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
